@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Nombre</title>
+</head>
+<body>
+    <button id="obtenerNombre">Obtener Nombre</button>
+
+    <script>
+        document.getElementById("obtenerNombre").addEventListener("click", function() {
+            fetch("nombre.php") // Llamamos al archivo PHP
+                .then(response => response.json())
+                .then(data => {
+                    alert("Tu nombre es: " + data.nombre);
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
